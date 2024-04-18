@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/app.js",
     "build": "npx tsc",
     "dev": "tsnd --respawn src/server.ts",
     "migrate:dev": "npx prisma migrate dev",
+    "migrate:deploy": "npx prisma migrate deploy",
     "studio:dev": "npx prisma studio"
   },
   "keywords": [],
