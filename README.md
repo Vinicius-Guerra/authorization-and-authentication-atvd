@@ -10,9 +10,25 @@ Visão geral do projeto, um pouco das tecnologias usadas.
 * Tsyringe
 * bcrypt + JWT 
 
-# Cadastro e Login API
+# API Autenticação e Autorização
 
-- praticando trabalho com token JWT e autorizações
+- Uma API desenvolvida para praticar conceitos de autenticação e autorização.
+
+Rode o comando abaixo para executar a migração do banco de dados:
+
+```bash
+npm run migrate:dev
+```
+
+**Será essencial ter um banco de dados criado e referenciado nas variáveis de ambiente**
+
+Rode o comando abaixo para iniciar a aplicação em modo de desenvolvimento
+
+```bash
+npm run dev
+```
+
+## Rotas da aplicação
 
 ### Registro de usuário POST /users
 
@@ -60,9 +76,9 @@ Padrão de resposta (STATUS 200)
 }
 ```
 
-Possiveis erros
+#### Possiveis erros
 
-403 UNAUTHORIZED
+403 UNAUTHORIZED - E-mail e senha não correspondem
 
 ```json
 {
@@ -70,7 +86,7 @@ Possiveis erros
 }
 ```
 
-404 NOT FOUND
+404 NOT FOUND - Usuário não cadastrado
 
 ```json
 {
@@ -78,10 +94,9 @@ Possiveis erros
 }
 ```
 
-### Retornar usuário GET /users
+### Retornar usuário GET /users 
 
-
-É necessário autorização para acessar esta rota, forneça o token do cabeçalho da requisição.
+#### É necessário autorização para acessar esta rota, forneça o token do cabeçalho da requisição.
 
 ```json
 {
@@ -96,7 +111,11 @@ Padrão de resposta (STATUS 200)
 ```json
 {
 	"id": 1,
-   	"name": "Name",
+   "name": "Name",
 	"email": "name@email.com"
 }
 ```
+
+#### Possiveis erros
+
+403 UNAUTHORIZED 
