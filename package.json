@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npx tsc",
     "dev": "tsnd --respawn src/server.ts",
     "migrate:dev": "npx prisma migrate dev",
     "studio:dev": "npx prisma studio"
